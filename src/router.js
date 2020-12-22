@@ -3,13 +3,13 @@ import VueRouter from 'vue-router'
 
 import ModalIndex from './components/modalIndex'
 
- Vue.use(VueRouter)
+Vue.use(VueRouter)
 
- const router = new VueRouter({
+const router = new VueRouter({
   routes: [{
     path: '/',
     component: ModalIndex
   }]
- })
+})
 
- export default router
+export default router

@@ -1,7 +1,7 @@
 <template>
   <div class="child">
     <p>child子组件</p>
-    <a-modal v-model="visible" title="Modal" ok-text="确认" cancel-text="取消" @ok="hideModal">
+    <a-modal v-model="visible" title="Modal" ok-text="确认" cancel-text="取消" @ok="hideModal" name="modalB">
         <p>要展示在首页的弹框B</p>
     </a-modal>
     <Grandson />
