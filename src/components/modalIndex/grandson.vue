@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <p>grandson孙组件</p>
-    <a-modal v-model="visible" title="Modal" ok-text="确认" cancel-text="取消" @ok="hideModal">
+    <a-modal v-model="visible" title="Modal" ok-text="确认" cancel-text="取消" @ok="hideModal" name="modalC">
         <p>要展示在首页的弹框C</p>
     </a-modal>
   </div>
@@ -34,13 +34,11 @@ export default {
       apiName(modalItem).then(res => {
       console.log('接口数据获取成功:', res)
         // 接口的返回值控制弹窗的展示与否，所以加入弹窗管理实例中
-        console.log('modalItem.id',modalItem.id)
-        modalControl.add(modalItem, {
+        modalControl.add('mockC_1', {
           backShow: res.backShow,
           handler: () => {
             console.log('弹窗展示：', modalItem)
             this.visible=true
-            // showModal(modalItem.condition)
           }
         })
       })
