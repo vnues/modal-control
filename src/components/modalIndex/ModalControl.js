@@ -28,8 +28,8 @@ class ModalControl {
 
   add (modalItem, infoObj) {
     this.modalFlatMap[modalItem.name] = {
+      id: modalItem.id,
       level: modalItem.level,
-      name: modalItem.name,
       frontShow: modalItem.frontShow,
       backShow: infoObj.backShow,
       handler: infoObj.handler
@@ -38,18 +38,15 @@ class ModalControl {
   }
 
   preCheck () {
-    console.log(Object.values(this.modalFlatMap))
     if (this.modalList.length === Object.values(this.modalFlatMap).length) {
       this.notify()
     }
   }
 
   notify () {
-    console.log('notify')
     const highLevelModal = Object.values(this.modalFlatMap).filter(item => item.backShow && item.frontShow).reduce((t, c) => {
       return c.level > t.level ? c : t
     }, { level: -1 })
-    console.log('highLevelModal', highLevelModal)
     highLevelModal.handler && highLevelModal.handler()
   }
 }

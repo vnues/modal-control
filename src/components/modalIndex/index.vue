@@ -43,7 +43,6 @@ export default {
           handler: () => {
             console.log('弹窗展示：', modalItem)
             this.visible=true
-            // showModal(modalItem.condition)
           }
         })
       })
