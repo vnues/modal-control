@@ -36,10 +36,8 @@ export default {
       apiName(modalItem).then(res => {
       console.log('接口数据获取成功:', res)
         // 接口的返回值控制弹窗的展示与否，所以加入弹窗管理实例中
-        console.log('modalItem.id',modalItem.id)
         modalControl.add(modalItem, {
           backShow: res.backShow,
-          name:modalItem.name,
           handler: () => {
             console.log('弹窗展示：', modalItem)
             this.visible=true
