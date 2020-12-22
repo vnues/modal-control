@@ -26,7 +26,6 @@ export default {
   },
   created () {
     const modalList = modalMap.index.modalList
-    // 实际开发中，每个接口的数据逻辑应该都是不一样的，这里只是为了更直观地模拟多接口获取数据，只是一个占位表达
     this.initApi(api1, modalList[2])
   },
   methods: {
